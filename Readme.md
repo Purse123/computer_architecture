@@ -5,17 +5,17 @@
 -- Define entity
 -- Define architecture
 
->> file name: hello.vhdl
+> file name: hello.vhdl
 **1. We need to compile the file**
 ```sh
 ghdl -a hello.vhdl
 ```
 - This updates a file work-obj93.cf, which describes library 'work'.
->> in linux, it generates `hello.o`
->> in windows, Object file is `not created`
+> in linux, it generates `hello.o` <br>
+> in windows, Object file is `not created`
 ***
 **2. Build an executable file**
->> entity name: hello_world
+> entity name: hello_world
 ```sh 
 ghdl -e hello_world
 ```
