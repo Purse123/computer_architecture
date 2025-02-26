@@ -1,9 +1,9 @@
 # Run `VHDL` file with `GDHL`
 
-**Program**
--- Import packages
--- Define entity
--- Define architecture
+**Program** <br>
+-- Import packages <br>
+-- Define entity <br>
+-- Define architecture <br>
 
 > file name: hello.vhdl
 **1. We need to compile the file**
