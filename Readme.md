@@ -6,6 +6,7 @@
 -- Define architecture <br>
 
 > file name: hello.vhdl <br>
+
 **1. We need to compile the file**
 ```sh
 ghdl -a hello.vhdl
