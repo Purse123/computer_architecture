@@ -1,13 +1,3 @@
---
---
--- AUTHOR: Pierce Neupane
----------------------------
--- NOTE:
--- Need process interupt for some reason (CTRL+C)
---                            After 20ns ^^^^^^^^
--- when ghdl -r ***
---
---
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -36,5 +26,6 @@ begin
   begin
     encoded_in <= "01";
     wait for 10 ns;
+    wait;
   end process;
 end behaviour;
