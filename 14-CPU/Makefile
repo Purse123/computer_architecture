@@ -1,6 +1,6 @@
-file=alu.vhd
-entity=Testbench
-vcdFile=sr_flipflop.vcd
+file=cpu.vhd
+entity=StandaloneCPU
+vcdFile=cpu.vcd
 
 compile:
 	ghdl -a $(file)

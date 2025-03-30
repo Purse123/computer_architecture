@@ -1,0 +1,4 @@
+v 4
+file . "cpu.vhd" "2ba4a3a2c7ed340dda2d4f68dc0e2cb89d2a79cf" "20250330160552.780":
+  entity standalonecpu at 1( 0) + 0 on 11;
+  architecture behavioral of standalonecpu at 8( 114) + 0 on 12;
