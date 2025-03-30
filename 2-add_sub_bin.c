@@ -49,7 +49,7 @@ int subtract(int a, int b) {
 int main() {
   int op, result, b1, b2;
   printf("------------------\n");
-  printf("Options:\n1. Addition\n2. Subtraction\n");
+  printf("1. Addition\n2. Subtraction\n");
   printf("------------------\n");
   printf("Enter instruction key: ");
   scanf("%d", &op);
