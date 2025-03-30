@@ -1,45 +1,43 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
-void booth_multiplication(int m, int q, int num_bits) {
-  int m_neg = ~m + 1;
-  int q_neg = ~q + 1;
-  int q1 = 0;
-  int accumulator = 0;
-  int q_copy = q;
+int add_signed(int a, int b, int num_bits) {
+  int result = a + b;
+  int mask = (1 << num_bits) - 1;
+  return result & mask;
+}
 
-  for (int i = 0; i < num_bits; i++) {
-    printf("Step %d: A=%d Q=%d Q1=%d\n", i + 1, accumulator, q_copy, q1);
+int subtract_signed(int a, int b, int num_bits) {
+  int b_neg = (~b + 1) & ((1 << num_bits) - 1);
+  return add_signed(a, b_neg, num_bits);
+}
 
-    if ((q_copy & 1) == 1 && q1 == 0) {
-      accumulator += m;
-    } else if ((q_copy & 1) == 0 && q1 == 1) {
-      accumulator += m_neg;
-    }
-
-    int q0 = q_copy & 1;
-    q_copy = (accumulator & 1) << (num_bits - 1) | (q_copy >> 1);
-    accumulator = (accumulator >> 1) & ((1 << (num_bits - 1)) - 1);
-
-    q1 = q0;
+void print_binary(int num, int num_bits) {
+  for (int i = num_bits - 1; i >= 0; i--) {
+    printf("%d", (num >> i) & 1);
   }
-
-  printf("Final Result: A = %d, Q = %d\n", accumulator, q_copy);
 }
 
 int main() {
-  int m, q;
-  int num_bits;
+  int num_bits, a, b;
 
   printf("Enter the number of bits: ");
   scanf("%d", &num_bits);
-  printf("Enter the multiplicand (signed 2's complement): ");
-  scanf("%d", &m);
-  printf("Enter the multiplier (signed 2's complement): ");
-  scanf("%d", &q);
 
-  booth_multiplication(m, q, num_bits);
+  printf("Enter first 2's comp number: ");
+  scanf("%d", &a);
+  printf("Enter second 2's comp number: ");
+  scanf("%d", &b);
+
+  int sum = add_signed(a, b, num_bits);
+  int difference = subtract_signed(a, b, num_bits);
+
+  printf("A + B : ");
+  print_binary(sum, num_bits);
+
+  printf("\nA - B : ");
+  print_binary(difference, num_bits);
+  printf("\n");
 
   return 0;
 }

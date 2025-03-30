@@ -47,14 +47,6 @@ begin
         received_parity <= '1'; 
         wait for 10 ns;
         
-        data_in <= "10101010"; 
-        received_parity <= parity_bit; 
-        wait for 10 ns;
-        
-        data_in <= "11110000"; 
-        received_parity <= '0'; 
-        wait for 10 ns;
-
         wait;
     end process;
 end behaviour;

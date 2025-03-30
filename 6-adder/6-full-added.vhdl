@@ -28,6 +28,18 @@ BEGIN
       A <= '1'; B <= '1';
       WAIT FOR 5 sec;
 
+      Cin <= '1';
+      A <= '0'; B <= '0';
+      WAIT FOR 5 sec;
+
+      A <= '0'; B <= '1';
+      WAIT FOR 5 sec;
+
+      A <= '1'; B <= '0';
+      WAIT FOR 5 sec;
+
+      A <= '1'; B <= '1';
+      WAIT FOR 5 sec;
       WAIT;
     END PROCESS;
 END behavior;

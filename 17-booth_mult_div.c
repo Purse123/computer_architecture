@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void booth_multiplication(int m, int q, int num_bits) {
+void booth_multiplication(int m, int q, int n) {
   int m_neg = ~m + 1;
   int q1 = 0;
   int accumulator = 0;
   int q_copy = q;
 
-  for (int i = 0; i < num_bits; i++) {
+  for (int i = 0; i < n; i++) {
     printf("Step %d: A=%d Q=%d Q1=%d\n", i + 1, accumulator, q_copy, q1);
 
     if ((q_copy & 1) == 1 && q1 == 0) {
@@ -17,22 +17,22 @@ void booth_multiplication(int m, int q, int num_bits) {
     }
 
     int q0 = q_copy & 1;
-    q_copy = (accumulator & 1) << (num_bits - 1) | (q_copy >> 1);
-    accumulator = (accumulator >> 1) & ((1 << (num_bits - 1)) - 1);
+    q_copy = (accumulator & 1) << (n - 1) | (q_copy >> 1);
+    accumulator = (accumulator >> 1) & ((1 << (n - 1)) - 1);
 
-    q1 = q0;
+   q1 = q0;
   }
 
   printf("Final Result: A = %d, Q = %d\n", accumulator, q_copy);
 }
 
-void booth_division(int m, int q, int num_bits) {
+void division(int m, int q, int n) {
   int m_neg = ~m + 1;
   int q1 = 0;
   int accumulator = 0;
   int q_copy = q;
 
-  for (int i = 0; i < num_bits; i++) {
+  for (int i = 0; i < n; i++) {
     printf("Step %d: A=%d Q=%d Q1=%d\n", i + 1, accumulator, q_copy, q1);
 
     if ((q_copy & 1) == 1 && q1 == 0) {
@@ -42,8 +42,8 @@ void booth_division(int m, int q, int num_bits) {
     }
 
     int q0 = q_copy & 1;
-    q_copy = (accumulator & 1) << (num_bits - 1) | (q_copy >> 1);
-    accumulator = (accumulator >> 1) & ((1 << (num_bits - 1)) - 1);
+    q_copy = (accumulator & 1) << (n - 1) | (q_copy >> 1);
+    accumulator = (accumulator >> 1) & ((1 << (n - 1)) - 1);
 
     q1 = q0;
   }
@@ -53,17 +53,17 @@ void booth_division(int m, int q, int num_bits) {
 
 int main() {
   int m, q;
-  int num_bits;
+  int n;
 
   printf("Enter the number of bits: ");
-  scanf("%d", &num_bits);
-  printf("Enter the dividend (signed 2's complement): ");
+  scanf("%d", &n);
+  printf("Enter the dividend: ");
   scanf("%d", &m);
-  printf("Enter the divisor (signed 2's complement): ");
+  printf("Enter the divisor: ");
   scanf("%d", &q);
 
-  booth_division(m, q, num_bits);
-  booth_multiplication(m, q, num_bits);
+  division(m, q, n);
+  booth_multiplication(m, q, n);
 
   return 0;
 }
