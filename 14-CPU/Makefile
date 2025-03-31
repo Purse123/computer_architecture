@@ -1,12 +1,9 @@
-file=cpu.vhd
-entity=StandaloneCPU
-vcdFile=cpu.vcd
+file=cpu.v
+vcdFile=ALU4Bit.vcd
 
-compile:
-	ghdl -a $(file)
-execute:
-	ghdl -e $(entity)
 runnable:
-	ghdl -r $(entity) --vcd=$(vcdFile)
+	iverilog $(file) -o output
+	./output
+
 gtkwave:
 	gtkwave $(vcdFile)

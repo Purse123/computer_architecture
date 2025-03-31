@@ -1,12 +1,12 @@
 file=sr_flipflop.vhd
-entity=Testbench
+entity=sr
 vcdFile=sr_flipflop.vcd
 
 compile:
 	ghdl -a $(file)
-execute:
+execute: compile
 	ghdl -e $(entity)
-runnable:
+runnable: execute
 	ghdl -r $(entity) --vcd=$(vcdFile)
 gtkwave:
 	gtkwave $(vcdFile)

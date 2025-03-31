@@ -1,12 +1,12 @@
 file=alu.vhd
 entity= aluTB
-vcdFile=sr_flipflop.vcd
+vcdFile=alu.vcd
 
 compile:
 	ghdl -a $(file)
-execute:
+execute: compile
 	ghdl -e $(entity)
-runnable:
+runnable: execute
 	ghdl -r $(entity) --vcd=$(vcdFile)
 gtkwave:
 	gtkwave $(vcdFile)

@@ -2,11 +2,13 @@ file=5-basic_gate.vhdl
 entity=basic_gates
 vcdFile=basic_gates.vcd
 
+all: compile execute runnable
+
 compile:
 	ghdl -a $(file)
-execute:
+execute: compile
 	ghdl -e $(entity)
-runnable:
+runnable: execute
 	ghdl -r $(entity) --vcd=$(vcdFile)
-gtkwave:
+gtkwave: runnable
 	gtkwave $(vcdFile)

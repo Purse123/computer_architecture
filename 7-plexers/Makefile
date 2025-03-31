@@ -9,15 +9,15 @@ compile1:
 	ghdl -a $(file)
 compile2:
 	ghdl -a $(file2)
-execute:
+execute1: compile1
 	ghdl -e $(entity1)
-execute2:
+execute2: compile2
 	ghdl -e $(entity2)
-runnable:
+runnable: execute1
 	ghdl -r $(entity1) --vcd=$(vcdFile1)
-runnable2:
+runnable2: execute2
 	ghdl -r $(entity2) --vcd=$(vcdFile2)
-gtkwave:
+gtkwave1:
 	gtkwave $(vcdFile1)
 gtkwave2:
 	gtkwave $(vcdFile2)

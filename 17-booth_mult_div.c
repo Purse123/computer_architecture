@@ -64,6 +64,8 @@ int main() {
 
   division(m, q, n);
   booth_multiplication(m, q, n);
+printf("-----------------------------\n");
+        printf("Programmed by: Pierce Neupane\n");
 
   return 0;
 }

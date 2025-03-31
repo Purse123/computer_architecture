@@ -59,4 +59,7 @@ int main() {
       printf("Invalid operation\n");
     }
   }
+  printf("-----------------------------\n");
+        printf("Programmed by: Pierce Neupane\n");
+
 }

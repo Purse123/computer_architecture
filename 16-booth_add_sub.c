@@ -38,6 +38,8 @@ int main() {
   printf("\nA - B : ");
   print_binary(difference, num_bits);
   printf("\n");
+printf("-----------------------------\n");
+        printf("Programmed by: Pierce Neupane\n");
 
   return 0;
 }

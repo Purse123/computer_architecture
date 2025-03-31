@@ -66,4 +66,7 @@ int main() {
   default: 
     printf("Invalid input\n");
   }
+  printf("-----------------------------\n");
+        printf("Programmed by: Pierce Neupane\n");
+
 }

@@ -33,18 +33,18 @@ begin
   clock_gen: process
   begin
     CLK <= '0';
-    wait for 5 ns;
+    wait for 5 sec;
     CLK <= '1';
-    wait for 5 ns;
+    wait for 5 sec;
   end process;
   
   stimulus: process
   begin
     S <= '0'; R <= '1';
-    wait for 20 ns;
+    wait for 20 sec;
     
     S <= '1'; R <= '0';
-    wait for 20 ns;
+    wait for 20 sec;
     
     report "Simulation complete" severity note;
     wait;

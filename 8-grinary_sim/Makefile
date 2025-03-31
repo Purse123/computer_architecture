@@ -7,18 +7,18 @@ vcdFile1=gray2bin.vcd
 
 compile:
 	ghdl -a $(file)
-execute:
+execute: compile
 	ghdl -e $(entity)
-runnable:
+runnable: execute
 	ghdl -r $(entity) --vcd=$(vcdFile)
 gtkwave:
 	gtkwave $(vcdFile)
 
 compile1:
 	ghdl -a $(file1)
-execute1:
+execute1: compile1
 	ghdl -e $(entity1)
-runnable1:
+runnable1: execute1
 	ghdl -r $(entity1) --vcd=$(vcdFile1)
 gtkwave1:
 	gtkwave $(vcdFile1)

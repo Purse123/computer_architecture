@@ -85,7 +85,8 @@ int main() {
         execute();  // Execute the previous instruction
         decode();   // Decode the current instruction
         fetch(i);   // Fetch the next instruction
-        printf("-----------------------------\n");
     }
+        printf("-----------------------------\n");
+        printf("Programmed by: Pierce Neupane\n");
     return 0;
 }
