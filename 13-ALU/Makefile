@@ -1,5 +1,5 @@
 file=alu.vhd
-entity=Testbench
+entity= aluTB
 vcdFile=sr_flipflop.vcd
 
 compile:

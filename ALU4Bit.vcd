@@ -1,0 +1,82 @@
+$date
+	Mon Mar 31 13:16:22 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module TestBench $end
+$var wire 4 ! Result [3:0] $end
+$var wire 1 " Cout $end
+$var reg 4 # A [3:0] $end
+$var reg 4 $ B [3:0] $end
+$var reg 3 % Opcode [2:0] $end
+$scope module uut $end
+$var wire 4 & A [3:0] $end
+$var wire 3 ' ALU_Op [2:0] $end
+$var wire 4 ( B [3:0] $end
+$var reg 4 ) ALU_Result [3:0] $end
+$var reg 1 " Zero $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b1000 )
+b11 (
+b0 '
+b101 &
+b0 %
+b11 $
+b101 #
+0"
+b1000 !
+$end
+#10
+b10 !
+b10 )
+b1 %
+b1 '
+#20
+b1 !
+b1 )
+b10 %
+b10 '
+#30
+b111 !
+b111 )
+b11 %
+b11 '
+#40
+b110 !
+b110 )
+b100 %
+b100 '
+#50
+1"
+b0 !
+b0 )
+b101 %
+b101 '
+bx $
+bx (
+#60
+b110 %
+b110 '
+b11 $
+b11 (
+bx #
+bx &
+#70
+b111 %
+b111 '
+bx $
+bx (
+b101 #
+b101 &
+#80
